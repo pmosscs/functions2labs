@@ -61,7 +61,7 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 // CODE HERE
 const totalPopulation = populations.reduce((preVal, curVal) => {
   return preVal + curVal;
-})
+}, 0)
 console.log(totalPopulation);
 
 
@@ -127,10 +127,20 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
-const bobsTotal = purchases.filter((value, index, array) => array[index].owner === 'Bob').reduce((preVal, curVal, curInd, arr) => {
-  preVal = arr[curInd].price;
-  curVal = arr[curInd].price;
-  return preVal + curVal;
-});
-console.log(bobsTotal);
-//230??
+// const bobsTotal = purchases.filter((value, index, array) => array[index].owner === 'Bob').reduce((preVal, curVal, curInd, arr) => {
+//     return preVal + curVal;
+//   });
+
+// console.log(bobsTotal);
+
+
+// .reduce((preVal, curVal, curInd, arr) => {
+//   preVal = arr[curInd].price;
+//   curVal = arr[curInd].price;
+//   return preVal + curVal;
+// }
+
+const bobsTotal = purchases.filter((ownerObj) => ownerObj.owner === 'Bob')
+.reduce((preVal, curVal) => {return preVal + curVal.price}, 0);
+
+console.log(bobsTotal)
