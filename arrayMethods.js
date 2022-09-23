@@ -127,6 +127,11 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+let bobsPurchases = purchases.filter((element) => element.owner === "Bob").reduce((preVal, element) => preVal + element.price, 0);
+console.log(bobsPurchases);
+
+
+
 // const bobsTotal = purchases.filter((value, index, array) => array[index].owner === 'Bob').reduce((preVal, curVal, curInd, arr) => {
 //     return preVal + curVal;
 //   });
@@ -140,7 +145,7 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 //   return preVal + curVal;
 // }
 
-const bobsTotal = purchases.filter((ownerObj) => ownerObj.owner === 'Bob')
-.reduce((preVal, curVal) => {return preVal + curVal.price}, 0);
+// const bobsTotal = purchases.filter((ownerObj) => ownerObj.owner === 'Bob')
+// .reduce((preVal, curVal) => {return preVal + curVal.price}, 0);
 
-console.log(bobsTotal)
+// console.log(bobsTotal)
